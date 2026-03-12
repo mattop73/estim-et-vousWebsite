@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estim&Vous — Découvrez la valeur de vos trésors</title>
-  <meta name="description" content="Estimez vos antiquités, tableaux et objets d'art depuis chez vous. Confiez-les à nos maisons de vente partenaires et encaissez au juste prix." />
+  <meta name="description" content="Notre IA propriétaire estime vos antiquités, tableaux et objets d'art en quelques secondes. Modèle fine-tuné sur nos serveurs, accès API pour les professionnels." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -333,6 +333,97 @@
     }
 
     /* ══════════════════════════════════════════════════════════════
+       AI TECHNOLOGY
+    ══════════════════════════════════════════════════════════════ */
+    #ai {
+      padding: 108px 0;
+      background-color: #1A1008;
+      background-image:
+        linear-gradient(rgba(247,244,239,.90), rgba(247,244,239,.90)),
+        url('https://images.unsplash.com/photo-1579167728798-a1cf3d595960?auto=format&fit=crop&w=1920&q=75');
+      background-size: cover;
+      background-position: 50% center;
+      background-attachment: fixed;
+    }
+    .ai-pillars {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 22px; margin-top: 60px;
+    }
+    .ai-pillar {
+      background: var(--white); border-radius: 20px;
+      padding: 42px 32px; border: 1px solid var(--border);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .ai-pillar:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,.08); }
+    .ai-pillar-icon {
+      width: 52px; height: 52px; background: var(--green-pale);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 22px;
+    }
+    .ai-pillar-icon svg { width: 24px; height: 24px; color: var(--green); }
+    .ai-pillar h3 {
+      font-family: var(--serif); font-size: 20px; font-weight: 600;
+      color: var(--dark); margin-bottom: 12px;
+    }
+    .ai-pillar p { font-size: 14px; line-height: 1.75; color: var(--muted); }
+
+    /* Comparison table */
+    .ai-compare {
+      margin-top: 72px; background: var(--white); border-radius: 20px;
+      padding: 44px 38px; border: 1px solid var(--border); overflow-x: auto;
+    }
+    .ai-compare h3 {
+      font-family: var(--serif); font-size: clamp(20px, 2.5vw, 26px); font-weight: 600;
+      color: var(--dark); margin-bottom: 32px; text-align: center;
+    }
+    .compare-table { width: 100%; border-collapse: collapse; }
+    .compare-table th,
+    .compare-table td {
+      padding: 15px 18px; text-align: center;
+      font-size: 13.5px; border-bottom: 1px solid var(--border);
+    }
+    .compare-table th {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .06em; color: var(--muted); padding-bottom: 18px;
+    }
+    .compare-table th:first-child,
+    .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--dark); }
+    .compare-table th.hl { color: var(--green); }
+    .compare-table td.hl { background: rgba(74,138,105,.04); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .cmp-yes { color: var(--green); font-weight: 700; font-size: 18px; }
+    .cmp-no  { color: #C04A00; font-size: 18px; }
+    .cmp-mid { color: var(--gold); font-size: 14px; font-weight: 600; }
+
+    /* API banner */
+    .ai-api {
+      margin-top: 44px; background: var(--dark); border-radius: 20px;
+      padding: 48px 52px; display: flex; align-items: center;
+      justify-content: space-between; gap: 32px;
+    }
+    .ai-api-text h3 {
+      font-family: var(--serif); font-size: 24px; font-weight: 600;
+      color: var(--white); margin-bottom: 10px;
+    }
+    .ai-api-text p {
+      font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.5); max-width: 500px;
+    }
+    .ai-api-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 50px;
+      background: rgba(74,138,105,.15); color: var(--green-light); margin-bottom: 14px;
+    }
+    .ai-api-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--green); color: var(--white);
+      padding: 15px 30px; border-radius: 50px;
+      font-size: 15px; font-weight: 600; border: none; cursor: pointer;
+      transition: background .2s, transform .2s; white-space: nowrap; text-decoration: none;
+    }
+    .ai-api-cta:hover { background: var(--green-light); transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════════════════════════════
        PARTNERS
     ══════════════════════════════════════════════════════════════ */
     #partners {
@@ -590,6 +681,11 @@
     @media (max-width: 768px) {
       .steps { grid-template-columns: 1fr; }
       .domains-grid { grid-template-columns: 1fr; }
+      .ai-pillars { grid-template-columns: 1fr; }
+      .ai-api { flex-direction: column; text-align: center; padding: 36px 28px; }
+      .ai-api-text p { max-width: none; }
+      .ai-compare { padding: 28px 18px; }
+      .compare-table th, .compare-table td { padding: 10px 8px; font-size: 12px; }
       .partners-layout { grid-template-columns: 1fr; }
       .alt-grid { grid-template-columns: 1fr; }
       .form-layout { grid-template-columns: 1fr; }
@@ -598,8 +694,7 @@
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       nav .nav-links { display: none; }
       .hero-title { font-size: 38px; }
-      /* background-attachment:fixed bugge sur iOS Safari */
-      #process, #partners, #alternative {
+      #process, #ai, #partners, #alternative {
         background-attachment: scroll;
         background-position: center center;
       }
@@ -622,8 +717,8 @@
     </a>
     <ul class="nav-links">
       <li><a href="#process">Démarche</a></li>
+      <li><a href="#ai">Notre IA</a></li>
       <li><a href="#domains">Domaines</a></li>
-      <li><a href="#partners">Partenaires</a></li>
       <li><a href="#estimation" class="nav-cta">Nous contacter</a></li>
     </ul>
   </div>
@@ -640,16 +735,16 @@
 
   <div class="hero-content container" style="padding-top: 160px;">
     <div class="hero-eyebrow">
-      <span class="label">La nouvelle façon d'estimer</span>
+      <span class="label">Estimation propulsée par l'IA</span>
       <div class="hero-eyebrow-line"></div>
     </div>
     <h1 class="hero-title">
       Vos objets ont<br />
       une <em>valeur cachée.</em><br />
-      Découvrez-la.
+      Notre IA la révèle.
     </h1>
     <p class="hero-sub">
-      Photographiez, obtenez une estimation en 48 h, puis confiez votre objet à une maison de vente partenaire qui gère tout jusqu'au paiement.
+      Photographiez votre objet, notre IA propriétaire l'analyse en quelques secondes. Confiez-le ensuite à une maison de vente partenaire qui gère tout jusqu'au paiement.
     </p>
     <div class="hero-actions">
       <a href="#estimation" class="btn-primary">
@@ -663,16 +758,16 @@
   <!-- Stats ribbon -->
   <div class="hero-stats">
     <div class="hero-stat">
-      <div class="hero-stat-num">+2 000</div>
-      <div class="hero-stat-label">estimations par mois</div>
+      <div class="hero-stat-num">+500 000</div>
+      <div class="hero-stat-label">données d'entraînement</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-num">98 %</div>
-      <div class="hero-stat-label">de satisfaction vendeurs</div>
+      <div class="hero-stat-num">< 10 s</div>
+      <div class="hero-stat-label">par estimation IA</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-num">48 h</div>
-      <div class="hero-stat-label">pour recevoir votre estimation</div>
+      <div class="hero-stat-num">Fine-tuné</div>
+      <div class="hero-stat-label">sur nos propres serveurs</div>
     </div>
   </div>
 
@@ -690,8 +785,8 @@
   <div class="container">
     <div class="section-header reveal">
       <span class="label">La démarche</span>
-      <h2 class="section-title">Simple comme une photo,<br />soutenu par notre conseil.</h2>
-      <p class="section-sub">De votre salon à la maison de vente, nous gérons réception, conseil, vente et paiement.</p>
+      <h2 class="section-title">Simple comme une photo,<br />puissant comme notre IA.</h2>
+      <p class="section-sub">De votre salon à la maison de vente : notre IA estime, nos partenaires gèrent conseil, vente et paiement.</p>
     </div>
 
     <div class="steps">
@@ -720,7 +815,7 @@
           </svg>
         </div>
         <h3>Estimez</h3>
-        <p>Notre technologie analyse votre objet et vous fournit une fourchette de prix réaliste sous 48 h.</p>
+        <p>Notre IA propriétaire, fine-tunée sur notre base de données, analyse votre objet et fournit une fourchette de prix réaliste en quelques secondes.</p>
         <div class="step-arrow">
           <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M6 3l2 2-2 2"/></svg>
         </div>
@@ -797,6 +892,131 @@
           Gemmologie & Horlogerie
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     AI TECHNOLOGY
+══════════════════════════════════════════════════════════════ -->
+<section id="ai">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Notre technologie</span>
+      <h2 class="section-title">Une IA entraînée<br />sur notre propre data.</h2>
+      <p class="section-sub">Modèles fine-tunés sur nos serveurs, nourris par notre base de données propriétaire et le savoir-faire de notre équipe.</p>
+    </div>
+
+    <div class="ai-pillars">
+      <div class="ai-pillar reveal">
+        <div class="ai-pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="4" y="4" width="16" height="16" rx="2"/>
+            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>
+          </svg>
+        </div>
+        <h3>Fine-tuning sur nos serveurs</h3>
+        <p>Nos modèles sont entraînés et hébergés sur notre propre infrastructure. Aucune dépendance à un fournisseur tiers pour l'inférence — contrôle total, latence minimale.</p>
+      </div>
+
+      <div class="ai-pillar reveal d1">
+        <div class="ai-pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Base de données propriétaire</h3>
+        <p>Des centaines de milliers de résultats de ventes aux enchères, catalogues raisonnés et estimations réelles alimentent nos modèles en continu.</p>
+      </div>
+
+      <div class="ai-pillar reveal d2">
+        <div class="ai-pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+            <path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <h3>L'expertise humaine dans la boucle</h3>
+        <p>Data scientists et spécialistes du marché de l'art travaillent main dans la main pour affiner continuellement la précision de nos modèles. Notre secret sauce.</p>
+      </div>
+    </div>
+
+    <div class="ai-compare reveal">
+      <h3>Pourquoi notre IA surpasse les modèles généralistes</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="hl">Estim&amp;Vous</th>
+            <th>ChatGPT</th>
+            <th>Claude</th>
+            <th>Google Lens</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Spécialisé marché de l'art</td>
+            <td class="hl"><span class="cmp-yes">&#10003;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+            <td><span class="cmp-mid">~</span></td>
+          </tr>
+          <tr>
+            <td>Base de ventes aux enchères réelles</td>
+            <td class="hl"><span class="cmp-yes">&#10003;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Estimation de prix fiable</td>
+            <td class="hl"><span class="cmp-yes">&#10003;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Fine-tuné sur données réelles</td>
+            <td class="hl"><span class="cmp-yes">&#10003;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Mise à jour en continu</td>
+            <td class="hl"><span class="cmp-yes">&#10003;</span></td>
+            <td><span class="cmp-mid">~</span></td>
+            <td><span class="cmp-mid">~</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Accès API professionnel</td>
+            <td class="hl"><span class="cmp-yes">&#10003;</span></td>
+            <td><span class="cmp-yes">&#10003;</span></td>
+            <td><span class="cmp-yes">&#10003;</span></td>
+            <td><span class="cmp-no">&#10007;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ai-api reveal">
+      <div class="ai-api-text">
+        <div class="ai-api-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          API disponible
+        </div>
+        <h3>Intégrez notre IA dans vos outils.</h3>
+        <p>Professionnels du marché de l'art, maisons de vente, commissaires-priseurs : accédez à notre moteur d'estimation via une API REST simple et documentée. Même moteur, même précision.</p>
+      </div>
+      <a href="#estimation" class="ai-api-cta">
+        Demander un accès API
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 7.5h9M9 4l3.5 3.5L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -1002,9 +1222,9 @@
         <h4>Navigation</h4>
         <ul>
           <li><a href="#process">Comment ça marche</a></li>
+          <li><a href="#ai">Notre IA</a></li>
           <li><a href="#domains">Nos domaines</a></li>
           <li><a href="#partners">Nos partenaires</a></li>
-          <li><a href="#alternative">Donner / Revendre</a></li>
           <li><a href="#estimation">Nous contacter</a></li>
         </ul>
       </div>
