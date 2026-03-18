@@ -86,20 +86,14 @@
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 
-    /* Logo : fond sombre sur hero (isole le blanc du logo), mix-blend sur nav claire */
     .nav-logo {
-      padding: 5px 9px;
-      border-radius: 9px;
-      background: rgba(0,0,0,.30);       /* pilule sombre sur fond hero */
-      transition: background .4s ease;
+      display: flex; align-items: center; gap: 0;
+      font-family: var(--serif); font-size: 22px; font-weight: 700;
+      color: var(--white); transition: color .4s ease;
     }
-    nav.scrolled .nav-logo {
-      background: transparent;           /* disparaît sur nav crème */
-    }
-    .nav-logo img { height: 38px; width: auto; display: block; }
-    nav.scrolled .nav-logo img {
-      mix-blend-mode: multiply;          /* fond blanc du logo devient invisible sur crème */
-    }
+    .nav-logo .logo-amp { color: var(--green); }
+    nav.scrolled .nav-logo { color: var(--dark); }
+    nav.scrolled .nav-logo .logo-amp { color: var(--green); }
     .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.85); transition: color .2s; }
     nav.scrolled .nav-links a { color: var(--text); }
@@ -167,7 +161,7 @@
       display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
       opacity: 0; animation: fadeUp .9s .3s forwards;
     }
-    .hero-eyebrow .label { color: var(--gold); font-size: 12px; }
+    .hero-eyebrow .label { color: var(--gold); font-size: 15px; letter-spacing: 0.18em; }
     .hero-eyebrow-line { width: 36px; height: 1px; background: var(--gold); opacity: .5; }
     .hero-title {
       font-family: var(--serif);
@@ -218,14 +212,14 @@
     .hero-stat {
       background: rgba(10,8,4,.6);
       backdrop-filter: blur(12px);
-      padding: 28px 32px;
+      padding: 38px 36px;
       text-align: center;
     }
     .hero-stat-num {
       font-family: var(--serif);
-      font-size: 34px; font-weight: 700; color: var(--white);
+      font-size: 42px; font-weight: 700; color: var(--white);
     }
-    .hero-stat-label { margin-top: 4px; font-size: 12px; color: rgba(255,255,255,.38); }
+    .hero-stat-label { margin-top: 6px; font-size: 14px; color: rgba(255,255,255,.55); }
 
     /* Scroll hint */
     .hero-scroll {
@@ -648,7 +642,7 @@
       display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 56px;
       padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,.05);
     }
-    .footer-brand img { height: 34px; filter: brightness(0) invert(1); opacity: .7; margin-bottom: 18px; }
+    .footer-brand img { height: 52px; filter: brightness(0) invert(1); opacity: .8; margin-bottom: 18px; }
     .footer-brand p { font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,.3); max-width: 280px; }
     .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 18px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
@@ -713,7 +707,7 @@
 <nav id="navbar">
   <div class="container nav-inner">
     <a href="#" class="nav-logo">
-      <img src="logo.png" alt="Estim&Vous" id="navLogo" />
+      Estim<span class="logo-amp">&amp;</span>Vous
     </a>
     <ul class="nav-links">
       <li><a href="#process">Démarche</a></li>
@@ -744,7 +738,7 @@
       Notre IA la révèle.
     </h1>
     <p class="hero-sub">
-      Photographiez votre objet, notre IA propriétaire l'analyse en quelques secondes. Confiez-le ensuite à une maison de vente partenaire qui gère tout jusqu'au paiement.
+      Photographiez votre objet, notre IA propriétaire l'analyse en quelques secondes. Confiez-le ensuite à une maison de ventes partenaire qui gère tout jusqu'au paiement.
     </p>
     <div class="hero-actions">
       <a href="#estimation" class="btn-primary">
@@ -762,7 +756,7 @@
       <div class="hero-stat-label">données d'entraînement</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-num">< 10 s</div>
+      <div class="hero-stat-num">&lt; 10 sec</div>
       <div class="hero-stat-label">par estimation IA</div>
     </div>
     <div class="hero-stat">
@@ -786,7 +780,7 @@
     <div class="section-header reveal">
       <span class="label">La démarche</span>
       <h2 class="section-title">Simple comme une photo,<br />puissant comme notre IA.</h2>
-      <p class="section-sub">De votre salon à la maison de vente : notre IA estime, nos partenaires gèrent conseil, vente et paiement.</p>
+      <p class="section-sub">De votre salon à la maison de ventes : notre IA estime, nos partenaires gèrent conseil, vente et paiement.</p>
     </div>
 
     <div class="steps">
@@ -830,7 +824,7 @@
           </svg>
         </div>
         <h3>Confiez</h3>
-        <p>Une maison de vente partenaire réceptionne, stocke et fait évaluer votre objet.</p>
+        <p>Une maison de ventes partenaire réceptionne, stocke et optimise la vente de votre objet.</p>
         <div class="step-arrow">
           <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M6 3l2 2-2 2"/></svg>
         </div>
@@ -845,7 +839,7 @@
           </svg>
         </div>
         <h3>Encaissez</h3>
-        <p>Votre objet est vendu, vous êtes payé directement. Zéro stress, au juste prix du marché.</p>
+        <p>Vous êtes payé sous quelques semaines. Aucun stress et surtout au juste prix du marché.</p>
       </div>
     </div>
   </div>
@@ -859,7 +853,7 @@
     <div class="section-header reveal">
       <span class="label">Nos domaines de conseil</span>
       <h2 class="section-title">Tout ce qui a de la valeur<br />mérite d'être estimé.</h2>
-      <p class="section-sub">Antiquités, tableaux de maîtres, bijoux — nos conseillers couvrent toutes les catégories d'objets précieux.</p>
+      <p class="section-sub">Antiquités, tableaux de maîtres, bijoux — notre technologie couvre toutes les catégories d'objets précieux.</p>
     </div>
 
     <div class="domains-grid">
@@ -869,7 +863,7 @@
         <p>Mobilier ancien, porcelaine, argenterie, faïence, horlogerie, objets décoratifs. Chaque pièce est analysée selon son époque, son état et sa provenance.</p>
         <div class="domain-tag">
           <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2l1.5 3.5L13 6l-2.5 2.5.5 3.5L8 10l-3 2 .5-3.5L3 6l3.5-.5z"/></svg>
-          Conseil certifié
+          Certifié par commissaires-priseurs
         </div>
       </div>
 
@@ -1029,29 +1023,29 @@
     <div class="partners-layout">
       <div class="partners-text reveal">
         <span class="label">Nos partenaires</span>
-        <h2 class="section-title">Un réseau de maisons de vente sélectionnées.</h2>
-        <p class="section-sub">Maisons de vente aux enchères et conseillers reconnus, garants du meilleur prix et de la transparence.</p>
+        <h2 class="section-title">Un réseau de maisons de ventes sélectionnées.</h2>
+        <p class="section-sub">Maisons de ventes aux enchères et conseillers reconnus, garants du meilleur prix et de la transparence.</p>
 
         <div class="partner-list">
           <div class="partner-item">
             <div class="partner-dot"></div>
             <div>
               <h4>Réception & Stockage sécurisé</h4>
-              <p>Vos objets sont récupérés, transportés et stockés dans des conditions optimales.</p>
+              <p>Vos objets sont récupérés et stockés dans des conditions optimales.</p>
             </div>
           </div>
           <div class="partner-item">
             <div class="partner-dot"></div>
             <div>
-              <h4>Conseil par des spécialistes</h4>
-              <p>Chaque lot est soumis à un conseiller reconnu dans son domaine avant la mise en vente.</p>
+              <h4>Conseil et Authentification</h4>
+              <p>Chaque lot est vérifié et authentifié avant sa mise en vente par la maison de ventes.</p>
             </div>
           </div>
           <div class="partner-item">
             <div class="partner-dot"></div>
             <div>
               <h4>Vente & Paiement garanti</h4>
-              <p>Transaction sécurisée, vous êtes payé directement après adjudication.</p>
+              <p>Transaction sécurisée, vous êtes payé directement quelques semaines après l'adjudication.</p>
             </div>
           </div>
         </div>
@@ -1146,7 +1140,7 @@
             </div>
             <div>
               <strong>Email</strong>
-              <span> contact@estimetvous.com</span>
+              <span>contact@estimetvous.com</span>
             </div>
           </div>
           <div class="form-aside-item">
@@ -1239,7 +1233,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Estim&Vous. Tous droits réservés.</p>
+      <p>© 2026 Estim&amp;Vous. Tous droits réservés.</p>
       <ul class="footer-legal">
         <li><a href="#">Mentions légales</a></li>
         <li><a href="#">Confidentialité</a></li>
